@@ -89,7 +89,6 @@ companySchema.statics.findByCredentials = async (email, password, type) => {
 
 companySchema.statics.findByCredentialsAdmin = async (email, password, type) => {
     const admin = await Companies.findOne({email})
-    console.log(admin)
     
     if(!admin) {
         throw Error('Unable to login')

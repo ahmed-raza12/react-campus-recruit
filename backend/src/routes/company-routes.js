@@ -148,7 +148,7 @@ routes.delete('/company', async (req, res) => {
 routes.post('/company/login', async (req, res) => {
     try {
         const company = await Companies.findByCredentials(req.body.email, req.body.password, req.body.type)
-        const token = await company.generateAuthToken()        
+        const token = await company.generateAuthToken()
         res.send({ company, token})
     } catch (e) {
         res.status(500).send(e)
